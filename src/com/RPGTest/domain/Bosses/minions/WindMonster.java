@@ -10,7 +10,7 @@ public class WindMonster extends Enemy {
         this.firstName = "有翼";
         this.lastName = "异形体";
         this.isPlayer = false;
-        this.hp = 200;
+        this.hp = 300;
         this.maxHp = this.hp;
         this.mp = 60;
         this.maxMp = this.mp;

@@ -148,7 +148,7 @@ public class SkillPool {
 
         double totalWeight = 0.0;
         double[] weights = new double[skills.size()];
-        double t = Math.min(battleCount / 40.0, 1.0);
+        double t = Math.min(battleCount / 30.0, 1.0);
 
         for (int i = 0; i < skills.size(); i++) {
             int price = skills.get(i).price;

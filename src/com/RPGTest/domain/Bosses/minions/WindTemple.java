@@ -9,7 +9,7 @@ public class WindTemple extends Enemy {
         this.firstName = "风暴尽头的";
         this.lastName = "神殿";
         this.isPlayer = false;
-        this.hp = 500;
+        this.hp = 750;
         this.maxHp = this.hp;
         this.mp = 1;
         this.maxMp = this.mp;

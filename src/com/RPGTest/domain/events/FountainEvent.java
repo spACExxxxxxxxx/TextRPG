@@ -32,10 +32,10 @@ public class FountainEvent extends SpecialEvent {
             }
             case 2 -> {
                 System.out.println("\n  扔什么进去？");
-                System.out.println("  1. 生命之戒  (MaxHP -20)");
+                System.out.println("  1. 生命之戒  (MaxHP -40)");
                 System.out.println("  2. 魔力披风  (MaxMP -10)");
                 System.out.println("  3. 宝剑     (ATK -6)");
-                System.out.println("  4. 盾牌     (DEF -4)");
+                System.out.println("  4. 盾牌     (DEF -6)");
                 System.out.println("  0. 算了");
                 System.out.print("  请选择: ");
 
@@ -54,10 +54,10 @@ public class FountainEvent extends SpecialEvent {
                 String itemName = "";
                 int loss = 0;
                 switch (item) {
-                    case 1 -> { player.maxHp -= 20; loss = 20; itemName = "生命之戒"; }
+                    case 1 -> { player.maxHp -= 40; loss = 40; itemName = "生命之戒"; }
                     case 2 -> { player.maxMp -= 10; loss = 10; itemName = "魔力披风"; }
                     case 3 -> { player.atk   -=  6; loss =  6; itemName = "宝剑"; }
-                    case 4 -> { player.def   -=  4; loss =  4; itemName = "盾牌"; }
+                    case 4 -> { player.def   -=  6; loss =  6; itemName = "盾牌"; }
                 }
                 if (player.hp > player.maxHp) player.hp = player.maxHp;
                 if (player.mp > player.maxMp) player.mp = player.maxMp;
@@ -73,8 +73,8 @@ public class FountainEvent extends SpecialEvent {
                     System.out.println("  一具人体浮了上来····你好像把她砸晕了");
                     System.out.println("  获得了 泉水精灵的宝物 ！");
                     System.out.println("  最大生命增加了300!");
-                } else if (roll < 50) {
-                    // 50%: 泉水精灵出现，5倍返还
+                } else if (roll < 60) {
+                    // 60%: 泉水精灵出现，5倍返还
                     int gain = loss * 3;
                     switch (item) {
                         case 1 -> { player.maxHp += gain; player.hp = player.maxHp; }
@@ -86,7 +86,6 @@ public class FountainEvent extends SpecialEvent {
                     System.out.println("  '我知道你想干什么，直接给你吧'");
                     System.out.println("  你获得了黄金的白银的和你自己的" + itemName);
                 } else {
-                    // 75%: 无事发生
                     System.out.println("  水面泛起涟漪...然后归于平静。");
                     System.out.println("  泉水精灵似乎不在家。");
                 }

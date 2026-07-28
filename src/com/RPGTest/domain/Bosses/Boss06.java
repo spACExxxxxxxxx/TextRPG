@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Boss06 extends Boss {
     public Boss06() {
-        super("","苍银帝", 1400, 800, 100, 70);
+        super("","苍银帝", 2100, 800, 100, 70);
         this.weak = ElementType.getWeakness(ElementType.ICE);
 
         skills.add(new IceLord());

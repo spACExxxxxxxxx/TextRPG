@@ -71,7 +71,7 @@ public class ShopService {
 
             System.out.println("\n--- 属性提升 ---");
             System.out.println("  点数: " + player.skillPoints + "  消耗1点");
-            System.out.println("  1. HP +15  (当前: " + player.maxHp + ")");
+            System.out.println("  1. HP +20  (当前: " + player.maxHp + ")");
             System.out.println("  2. MP +5   (当前: " + player.maxMp + ")");
             System.out.println("  3. ATK +3  (当前: " + player.atk + ")");
             System.out.println("  4. DEF +3  (当前: " + player.def + ")");

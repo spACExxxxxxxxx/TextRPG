@@ -8,9 +8,9 @@ import java.util.Random;
 
 public class LightingDance extends Skill {
     public LightingDance() {
-        super("煌雷之天闪", 5, 80, ElementType.LIGHT, 4);
+        super("煌雷之天闪", 4, 100, ElementType.LIGHT, 4);
         this.isAOE = true;
-        this.description = "造成2~5*攻击力的对群穿透伤害";
+        this.description = "造成2~4*攻击力的对群穿透伤害";
     }
     Random random = new Random();
     @Override

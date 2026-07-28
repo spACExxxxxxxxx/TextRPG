@@ -7,8 +7,8 @@ import com.RPGTest.domain.ElementType;
 
 public class WindGoing extends Skill {
     public WindGoing() {
-        super("天狗风", 4, 50, ElementType.WIND,4);
-        this.description = "造成1*攻击力的伤害4次，降低目标防御力&攻击力10%*2回合";
+        super("天狗风", 0.6, 40, ElementType.WIND,4);
+        this.description = "造成0.6*攻击力的伤害4次，降低目标防御力&攻击力10%*2回合";
     }
     @Override
     public void use(com.RPGTest.domain.Character owner, Character target){
@@ -25,7 +25,7 @@ public class WindGoing extends Skill {
         System.out.println(owner.lastName + " 释放了 " + this.name + "！");
         int totalDamage = 0;
         for (int i = 0; i < 4; i++) {
-            int hit = owner.atk;
+            int hit = (int)(owner.atk * this.power);
             if (this.element == target.weak && this.element != ElementType.NONE) {
                 hit *= 2;
             }

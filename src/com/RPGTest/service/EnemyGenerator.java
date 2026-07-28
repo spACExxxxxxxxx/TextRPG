@@ -30,14 +30,13 @@ public class EnemyGenerator {
         List<Enemy> enemies = new ArrayList<>();
         int battleNumber = battleCount + 1;
 
-        // 最终 Boss：第46场
-        if (battleNumber == 46) {
+        // 最终 Boss：第31场
+        if (battleNumber == 31) {
             System.out.println("\n╔══════════════════════════════╗");
-            System.out.println("║     ☠  最终决战！ ☠          ║");
+            System.out.println("║        ☠  最终决战！ ☠        ║");
             System.out.println("╚══════════════════════════════╝");
             Boss boss = new Boss07();
             enemies.add(boss);
-            System.out.print("  🐉 ");
             boss.showBrief();
             System.out.print("      技能: ");
             for (int j = 0; j < boss.skills.size(); j++) {
@@ -48,8 +47,8 @@ public class EnemyGenerator {
             return enemies;
         }
 
-        // Boss 战（每15场）
-        if (battleNumber % 15 == 0) {
+        // Boss 战（每10场）
+        if (battleNumber % 10 == 0) {
             System.out.println("\n╔══════════════════════════════╗");
             System.out.println("║       👑  !BOSS战!  👑       ║");
             System.out.println("╚══════════════════════════════╝");
@@ -75,15 +74,15 @@ public class EnemyGenerator {
 
         // 普通敌人数量
         int count;
-        if (battleCount < 10) {
+        if (battleCount < 7) {
             count = 1;
-        } else if (battleCount < 15) {
+        } else if (battleCount < 14) {
             count = random.nextInt(2) + 1;
-        } else if (battleCount < 25) {
+        } else if (battleCount < 23) {
             count = random.nextInt(2) + 2;
         } else {
             count = random.nextInt(2) + 2;
-            if (battleCount >= 30 && random.nextInt(100) < 30) {
+            if (battleCount >= 24 && random.nextInt(100) < 30) {
                 count = 4;
             }
         }
@@ -107,7 +106,7 @@ public class EnemyGenerator {
     }
 
     private static Boss getBoss(int battleNumber, Scanner sc) {
-        int bossIndex = battleNumber / 15;  // 1, 2, 3...
+        int bossIndex = battleNumber / 10;  // 1, 2, 3...
 
         switch (bossIndex) {
             case 1 -> {

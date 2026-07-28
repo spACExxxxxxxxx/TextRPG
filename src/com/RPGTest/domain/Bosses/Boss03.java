@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Boss03 extends Boss {
     public Boss03() {
-        super("","风暴主", 800, 300, 80, 70);
+        super("","风暴主", 1200, 300, 80, 70);
         this.weak = ElementType.getWeakness(ElementType.WIND);
 
         skills.add(new WindCalling());

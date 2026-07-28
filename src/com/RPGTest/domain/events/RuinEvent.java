@@ -29,8 +29,8 @@ public class RuinEvent extends SpecialEvent {
 
         switch (pick) {
             case 1 -> {
-                player.maxHp += 150;
-                player.hp += 150;
+                player.maxHp += 200;
+                player.hp += 200;
                 player.def -= 18;
                 System.out.println("  得到了 悲鸣之翡翠石");
                 System.out.println("  最大生命值增加了，防御力减少了");
@@ -38,7 +38,7 @@ public class RuinEvent extends SpecialEvent {
             case 2 -> {
                 player.maxMp += 50;
                 player.mp += 50;
-                player.maxHp -= 75;
+                player.maxHp -= 120;
                 System.out.println("  得到了 臆想之青金石");
                 System.out.println("  最大魔力值增加了，最大生命值减少了");
             }
@@ -55,7 +55,7 @@ public class RuinEvent extends SpecialEvent {
                 System.out.println("  防御力增加了，攻击力减少了");
             }
             case 0 -> {
-                player.maxHp += 50; player.hp += 50;
+                player.maxHp += 100; player.hp += 100;
                 player.maxMp += 25; player.mp += 25;
                 player.atk += 15;
                 player.def += 15;

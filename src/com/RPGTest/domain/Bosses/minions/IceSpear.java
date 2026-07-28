@@ -11,7 +11,7 @@ public class IceSpear extends Enemy {
         this.firstName = "玄冰";
         this.lastName = "侍从";
         this.isPlayer = false;
-        this.hp = 200;
+        this.hp = 300;
         this.maxHp = this.hp;
         this.mp = 110;
         this.maxMp = this.mp;

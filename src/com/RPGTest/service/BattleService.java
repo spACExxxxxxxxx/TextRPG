@@ -83,10 +83,11 @@ public class BattleService {
         // 玩家行动选择
         while (true) {
             System.out.println("\n请选择行动：");
-            System.out.println("  1. 普通攻击");
+            System.out.println("  1. 普通攻击（回复8点mp）");
             System.out.println("  2. 技能攻击");
             System.out.println("  3. 防御（本回合受到的伤害减半）");
             System.out.println("  4. 临时强化（不占行动）");
+            System.out.println("  5. 回血药水 ×" + player.potionCount + "（不占行动）");
             System.out.print("请输入选择: ");
 
             int choice;
@@ -151,7 +152,7 @@ public class BattleService {
                         continue;
                     }
                     System.out.println("\n选择强化属性（消耗1点，本场战斗内生效）：");
-                    System.out.println("  1. HP +30");
+                    System.out.println("  1. HP +40");
                     System.out.println("  2. MP +10");
                     System.out.println("  3. ATK +6");
                     System.out.println("  4. DEF +6");
@@ -172,10 +173,10 @@ public class BattleService {
                     switch (boostChoice) {
                         case 1 -> {
                             if (player.spendSkillPoints(1)) {
-                                player.maxHp += 30;
-                                player.hp += 30;
-                                player.tempHpBoost += 30;
-                                System.out.println("  生命上限 +30！当前 HP: " + player.hp + "/" + player.maxHp);
+                                player.maxHp += 40;
+                                player.hp += 40;
+                                player.tempHpBoost += 40;
+                                System.out.println("  生命上限 +40！当前 HP: " + player.hp + "/" + player.maxHp);
                                 applied = true;
                             }
                         }
@@ -208,6 +209,18 @@ public class BattleService {
                     }
 
                     // 不return，继续主菜单，玩家可以再攻击/防御
+                    continue;
+                }
+                case 5 -> {
+                    if (player.potionCount < 1) {
+                        System.out.println("药水已用完！");
+                        continue;
+                    }
+                    player.potionCount--;
+                    int heal = 100 + player.maxHp / 10;
+                    player.hp += heal;
+                    if (player.hp > player.maxHp) player.hp = player.maxHp;
+                    System.out.println("  使用了回血药水！HP +" + heal + "（剩余: " + player.potionCount + " 瓶）");
                     continue;
                 }
                 default -> System.out.println("无效选择，请重新输入！");

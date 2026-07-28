@@ -14,23 +14,23 @@ public class Enemy extends Character {
     // 职业基础属性表（lastName → {HP, MP, ATK, DEF}）
     private static final Map<String, int[]> CLASS_STATS = new HashMap<>();
     static {
-        CLASS_STATS.put("骑士", new int[]{ 80, 30, 30, 20});  // 均衡
-        CLASS_STATS.put("剑士", new int[]{100, 10, 35, 20});  // atk hp高，mp低
-        CLASS_STATS.put("法师", new int[]{ 50, 60, 30,  0});  // MP高, ATK高, 脆皮
-        CLASS_STATS.put("坦克", new int[]{140, 10, 20, 25});  // hp def高，mp atk低
-        CLASS_STATS.put("弓手", new int[]{ 70, 20, 30, 10});  // atk高，def低
-        CLASS_STATS.put("刺客", new int[]{ 40, 10, 40,  0});  // atk高，def mp低
+        CLASS_STATS.put("骑士", new int[]{120, 30, 30, 20});  // 均衡
+        CLASS_STATS.put("剑士", new int[]{150, 10, 35, 20});  // atk hp高，mp低
+        CLASS_STATS.put("法师", new int[]{ 75, 60, 30,  0});  // MP高, ATK高, 脆皮
+        CLASS_STATS.put("坦克", new int[]{210, 10, 20, 25});  // hp def高，mp atk低
+        CLASS_STATS.put("弓手", new int[]{105, 20, 30, 10});  // atk高，def低
+        CLASS_STATS.put("刺客", new int[]{ 60, 10, 40,  0});  // atk高，def mp低
     }
 
     // 职业每场成长率表（lastName → {HP, MP, ATK, DEF} 每场增量）
     private static final Map<String, int[]> CLASS_GROWTH = new HashMap<>();
     static {
-        CLASS_GROWTH.put("骑士", new int[]{  8,  2, 3, 1});  // 均衡
-        CLASS_GROWTH.put("剑士", new int[]{ 10,  1, 5, 1});  // 血牛战士
-        CLASS_GROWTH.put("法师", new int[]{  5,  5, 3, 0});  // 魔力成长
-        CLASS_GROWTH.put("坦克", new int[]{ 12,  1, 2, 2});  // 沙包
-        CLASS_GROWTH.put("弓手", new int[]{  7,  2, 5, 1});  // 物理输出
-        CLASS_GROWTH.put("刺客", new int[]{  5,  1, 6, 0});  // 玻璃大炮
+        CLASS_GROWTH.put("骑士", new int[]{ 12,  2, 3, 1});  // 均衡
+        CLASS_GROWTH.put("剑士", new int[]{ 15,  1, 5, 1});  // 血牛战士
+        CLASS_GROWTH.put("法师", new int[]{  8,  5, 3, 0});  // 魔力成长
+        CLASS_GROWTH.put("坦克", new int[]{ 18,  1, 2, 2});  // 沙包
+        CLASS_GROWTH.put("弓手", new int[]{ 10,  2, 5, 1});  // 物理输出
+        CLASS_GROWTH.put("刺客", new int[]{  8,  1, 6, 0});  // 玻璃大炮
     }
 
     public static final String[] LAST_NAMES = {"骑士", "剑士", "法师", "坦克", "弓手" , "刺客"};

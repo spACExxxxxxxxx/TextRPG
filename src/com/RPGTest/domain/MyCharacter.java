@@ -6,6 +6,7 @@ public class MyCharacter extends Character {
     public int skillPoints = 0;   // 可分配点数
     public int battleCount = 0;   // 战斗场次
     public int eventCount = 0;    // 触发特殊事件次数
+    public int potionCount = 3;   // 回血药水数
     public ArrayList<Skill> soldSkills = new ArrayList<>();   // 已出售技能（商店抓取时排除）
 
     public MyCharacter(String firstName, String lastName, int hp, int mp, int atk, int def) {
@@ -21,11 +22,6 @@ public class MyCharacter extends Character {
     /**
      * 获得技能点数（战斗胜利）
      */
-    public void addSkillPoint() {
-        skillPoints += 3;
-        System.out.println("🌟 获得3个技能点数！当前点数: " + skillPoints);
-    }
-
     public void addSomeSkillPoint(int amount) {
         skillPoints += amount;
         System.out.println("🌟 获得" + amount + "个技能点数！当前点数: " + skillPoints);
@@ -49,9 +45,9 @@ public class MyCharacter extends Character {
     public void upgradeStat(String stat) {
         switch (stat) {
             case "HP":
-                maxHp += 15;
-                hp += 15;
-                System.out.println("生命上限 +15！当前 HP: " + hp + "/" + maxHp);
+                maxHp += 20;
+                hp += 20;
+                System.out.println("生命上限 +20！当前 HP: " + hp + "/" + maxHp);
                 break;
             case "MP":
                 maxMp += 5;

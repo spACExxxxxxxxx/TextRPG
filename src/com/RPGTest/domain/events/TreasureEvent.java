@@ -46,8 +46,8 @@ public class TreasureEvent extends SpecialEvent {
     private void treasureStat(MyCharacter player) {
         switch (new Random().nextInt(4)) {
             case 0 -> {
-                player.maxHp += 30; player.hp += 30;
-                System.out.println("  生命上限 +30！");
+                player.maxHp += 40; player.hp += 40;
+                System.out.println("  生命上限 +40！");
             }
             case 1 -> {
                 player.maxMp += 10; player.mp += 10;

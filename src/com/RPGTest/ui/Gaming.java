@@ -36,7 +36,7 @@ public class Gaming {
      */
     public MyCharacter createMyCharacter(String userName) {
         while (true) {
-            int baseHp = 100, baseMp = 50, baseAtk = 30, baseDef = 20;
+            int baseHp = 150, baseMp = 50, baseAtk = 30, baseDef = 15;
             int hp = 0, mp = 0, atk = 0, def = 0;
             String firstname;
             Skill startingSkill1;
@@ -61,7 +61,7 @@ public class Gaming {
             switch (classChoice) {
                 case 1:
                     firstname = "Berserker";
-                    baseHp += 50;
+                    baseHp += 100;
                     startingSkill1 = new GodHand();
                     startingSkill2 = new EarthBreath();
                     startingSkill3 = new AttackBreak();
@@ -94,7 +94,7 @@ public class Gaming {
                     break;
                 case 4:
                     firstname = "Saber";
-                    baseDef += 10;
+                    baseDef += 15;
                     startingSkill1 = new WindField();
                     startingSkill2 = new HealingRain();
                     startingSkill3 = new AttackRapid();
@@ -207,7 +207,7 @@ public class Gaming {
 
             // 3. 胜利：获得点数，增加战斗场次
             player.incrementBattleCount();
-            player.addSkillPoint();
+            player.addSomeSkillPoint(4);
             player.recoverAfterBattle();
 
             // 4. Boss 战奖励：选择一项 Boss 技能
@@ -232,12 +232,15 @@ public class Gaming {
                         System.out.println("选择了技能外奖励。");
                         player.addSomeSkillPoint(10);
                     }
+                    // Boss 战后补充药水
+                    player.potionCount = player.battleCount >= 20 ? 5 : 4;
+                    System.out.println("  🧪 补充了回血药水！（当前: " + player.potionCount + " 瓶）");
                     break;
                 }
             }
 
             // 5. 每10场获得特色技能
-            if (player.battleCount % 10 == 0) {
+            if (player.battleCount % 7 == 0) {
                 System.out.println("\n🎊 第 " + player.battleCount + " 场战斗胜利！获得随机特色技能！");
                 java.util.ArrayList<Skill> specialExclude = new java.util.ArrayList<>(player.skills);
                 specialExclude.addAll(player.soldSkills);

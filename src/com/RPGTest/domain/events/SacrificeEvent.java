@@ -16,7 +16,7 @@ public class SacrificeEvent extends SpecialEvent {
         while (count < 3) {
             System.out.println("\n  剩余献祭次数: " + (3 - count));
             System.out.println("  选择提升属性：");
-            System.out.println("    1. HP +30");
+            System.out.println("    1. HP +40");
             System.out.println("    2. MP +10");
             System.out.println("    3. ATK +6");
             System.out.println("    4. DEF +6");
