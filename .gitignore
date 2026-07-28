@@ -1,0 +1,51 @@
+### IntelliJ IDEA ###
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+.kotlin
+.idea/
+./
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+
+
+*.class
+Thumbs.db
+# 忽略 IDEA 配置文件
+*.iml
+
+# 忽略编译输出和打包产物
+target/
+dist/
+*.exe
+*.msi
+*.jar
+*.log
+
+# 忽略 jpackage 生成的大文件夹（重点！）
+app/
+runtime/
+你的游戏名称/
