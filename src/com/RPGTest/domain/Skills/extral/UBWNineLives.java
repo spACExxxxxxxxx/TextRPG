@@ -7,7 +7,7 @@ import com.RPGTest.domain.ElementType;
 public class UBWNineLives extends TemporarySkill {
     public UBWNineLives() {
         super("射杀百头(伪)", 1.8, 20, ElementType.EARTH);
-        this.description = "造成1.8攻击力的伤害，并提升自身攻击力20%*3回合";
+        this.description = "造成1.8攻击力的伤害，并提升自身攻击力30%*3回合";
     }
 
     @Override
@@ -19,6 +19,6 @@ public class UBWNineLives extends TemporarySkill {
         }
         System.out.println(owner.lastName + " 释放了 " + this.name + "！");
         target.takePhysicalDamage(damage);
-        owner.applyBuff(BuffType.ATK_UP, 20, 3);
+        owner.applyBuff(BuffType.ATK_UP, 30, 3);
     }
 }

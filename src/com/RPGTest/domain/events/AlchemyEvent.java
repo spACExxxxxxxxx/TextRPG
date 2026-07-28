@@ -40,25 +40,29 @@ public class AlchemyEvent extends SpecialEvent {
     }
 
     private void rollStats(MyCharacter player) {
-        int total = player.maxHp + player.maxMp + player.atk + player.def;
+        // 各拿出 50% 汇入池中
+        int poolHp  = player.maxHp / 2;
+        int poolMp  = player.maxMp / 2;
+        int poolAtk = player.atk / 2;
+        int poolDef = player.def / 2;
+        int total = poolHp + poolMp + poolAtk + poolDef;
         Random rng = new Random();
 
-        // HP: 随机从 total-3 中取（给剩下 3 属性各留至少 1）
-        int hp  = rng.nextInt(total-1) + 1;
-        total -= hp;
-        // MP: 从剩余中取
-        int mp  = rng.nextInt(total);
-        total -= mp;
-        // ATK: 从剩余中取
-        int atk = rng.nextInt(total);
-        total -= atk;
-        // DEF: 余下全给
-        int def = total;
+        // 随机分配池中的总值
+        int min = total / 20;  // 每项至少分到 5%
+        int rHp  = rng.nextInt(total - min * 3) + min;
+        total -= rHp;
+        int rMp  = rng.nextInt(total - min * 2) + min;
+        total -= rMp;
+        int rAtk = rng.nextInt(total - min) + min;
+        total -= rAtk;
+        int rDef = total;
 
-        player.maxHp = hp;
-        player.maxMp = mp;
-        player.atk  = atk;
-        player.def  = def;
+        // 保留的 50% + 随机分配部分
+        player.maxHp = poolHp + rHp;
+        player.maxMp = poolMp + rMp;
+        player.atk   = poolAtk + rAtk;
+        player.def   = poolDef + rDef;
     }
 
     private void showStats(MyCharacter player) {
