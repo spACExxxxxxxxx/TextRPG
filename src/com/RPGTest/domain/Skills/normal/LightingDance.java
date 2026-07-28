@@ -10,7 +10,7 @@ public class LightingDance extends Skill {
     public LightingDance() {
         super("煌雷之天闪", 4, 100, ElementType.LIGHT, 4);
         this.isAOE = true;
-        this.description = "造成2~4*攻击力的对群穿透伤害";
+        this.description = "造成0.8~4*攻击力的对群穿透伤害";
     }
     Random random = new Random();
     @Override
@@ -20,7 +20,7 @@ public class LightingDance extends Skill {
             return;
         }
 
-        int baseDamage = (int) (this.power * owner.atk * random.nextInt(40, 100) / 100);
+        int baseDamage = (int) (this.power * owner.atk * random.nextInt(20, 100) / 100);
         int damageToTarget = baseDamage;
         if (this.element == target.weak && this.element != ElementType.NONE) {
             System.out.println("💥 元素克制！伤害翻倍！");
