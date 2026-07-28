@@ -240,7 +240,7 @@ public class Gaming {
             }
 
             // 5. 每10场获得特色技能
-            if (player.battleCount % 7 == 0) {
+            if (player.battleCount % 8 == 0) {
                 System.out.println("\n🎊 第 " + player.battleCount + " 场战斗胜利！获得随机特色技能！");
                 java.util.ArrayList<Skill> specialExclude = new java.util.ArrayList<>(player.skills);
                 specialExclude.addAll(player.soldSkills);

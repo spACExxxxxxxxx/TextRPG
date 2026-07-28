@@ -8,7 +8,7 @@ import com.RPGTest.domain.ElementType;
 public class AttackRapid extends Skill {
     public AttackRapid() {
         super("拔刀斩", 3, 20, ElementType.NONE,3);
-        this.description = "造成3*mp/maxMp*攻击力的穿透伤害，自己的防御力下降40%*2回合";
+        this.description = "造成3*mp/maxMp*攻击力的伤害，自己的防御力下降40%*2回合";
     }
     @Override
     public void use(com.RPGTest.domain.Character owner, Character target) {
@@ -17,7 +17,7 @@ public class AttackRapid extends Skill {
             return;
         }
 
-        int baseDamage = owner.atk * 3 * owner.mp/owner.maxMp;
+        int baseDamage = (int)(owner.atk * this.power * owner.mp/owner.maxMp);
         if (baseDamage < 0) baseDamage = 0;
         int damageToTarget = baseDamage;
         System.out.println(owner.lastName + " 释放了 " + this.name + "！");

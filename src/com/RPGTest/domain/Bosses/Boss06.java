@@ -22,6 +22,7 @@ public class Boss06 extends Boss {
         List<Enemy> minions = new java.util.ArrayList<>();
         minions.add(new IceSpear());
         minions.add(new IceSpear());
+        minions.add(new IceSpear());
         return minions;
     }
 }

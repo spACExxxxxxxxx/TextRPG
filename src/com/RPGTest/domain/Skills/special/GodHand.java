@@ -7,7 +7,7 @@ import com.RPGTest.domain.ElementType;
 
 public class GodHand extends Skill {
     public GodHand() {
-        super("十二试炼", 0, 30, ElementType.HEAL, true);
+        super("十二试炼", 0, 40, ElementType.HEAL, true);
         this.description = "消耗所有mp，恢复一半hp，并提升自身防御&攻击30%*2回合，";
     }
     @Override
