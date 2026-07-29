@@ -8,6 +8,7 @@ import com.RPGTest.domain.ElementType;
 public class EarthBreath extends Skill {
     public EarthBreath() {
         super("盖亚之息", 1.6, 50, ElementType.EARTH,4);
+        isAOE = true;
         this.description = "造成1.6*攻击力的对群伤害，自身进入防御状态，并减少目标20%攻击*3回合";
     }
     @Override

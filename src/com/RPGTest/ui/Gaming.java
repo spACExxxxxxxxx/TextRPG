@@ -255,8 +255,8 @@ public class Gaming {
             // 5. 打开商店
             ShopService.openShop(player, sc);
 
-            // 6. 特殊事件（25%概率）
-            if (new java.util.Random().nextInt(100) < 30) {
+            // 6. 特殊事件（35%概率）
+            if (new java.util.Random().nextInt(100) < 35) {
                 com.RPGTest.domain.events.SpecialEvent event =
                     com.RPGTest.domain.events.EventPool.roll();
                 System.out.println("\n╔══════════════════════════════╗");
