@@ -48,4 +48,5 @@ dist/
 # 忽略 jpackage 生成的大文件夹（重点！）
 app/
 runtime/
-你的游戏名称/
+.rar
+GoodGame/

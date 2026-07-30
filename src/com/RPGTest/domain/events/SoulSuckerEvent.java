@@ -16,7 +16,7 @@ public class SoulSuckerEvent extends SpecialEvent {
 
         while (true) {
             System.out.println("\n  当前: MP=" + player.mp + "/" + player.maxMp
-                    + "  MaxHP=" + player.maxHp + "  技能点：" + player.skillPoints);
+                    + "  HP=" +  player.hp + "/" +  player.maxHp + "  技能点：" + player.skillPoints);
             System.out.println("  1. 献出灵魂 (-30MP/100HP，获得 1 技能点)");
             System.out.println("  2. 一脚踹死 (与 攻击力 有关)");
             System.out.println("  0. 离开");

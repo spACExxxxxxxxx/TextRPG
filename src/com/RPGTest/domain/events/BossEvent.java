@@ -12,15 +12,15 @@ public class BossEvent extends SpecialEvent {
 
     private static final Map<Integer, List<BossEntry>> BOSS_TIERS = new LinkedHashMap<>();
     static {
-        BOSS_TIERS.put(15, List.of(
+        BOSS_TIERS.put(10, List.of(
             new BossEntry("暗影龙",   "暗影吐息", "裂空龙爪", "龙威"),
             new BossEntry("三一结构体", "光剑裁决", "净世雨",   "光天颂圣歌")
         ));
-        BOSS_TIERS.put(30, List.of(
+        BOSS_TIERS.put(20, List.of(
             new BossEntry("风暴主",     "祭风",   "天风魔舞", "飓风眼"),
             new BossEntry("飞沙之剑圣", "断钢",   "泼沙",     "顽石金刚")
         ));
-        BOSS_TIERS.put(45, List.of(
+        BOSS_TIERS.put(30, List.of(
             new BossEntry("炎魔",   "炼狱",     "焚尽",       "耀斑"),
             new BossEntry("苍银帝", "苍之冕",   "冰殛暴风雪", "冰天百华葬")
         ));

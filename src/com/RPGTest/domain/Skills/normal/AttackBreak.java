@@ -7,7 +7,7 @@ import com.RPGTest.domain.ElementType;
 
 public class AttackBreak extends Skill {
     public AttackBreak() {
-        super("破阵击", 0, 0, ElementType.NONE,2);
+        super("破阵击", 0, 10, ElementType.NONE,2);
         this.description = "支付30点生命，造成2*攻击力的伤害，减少目标40%防御";
     }
     @Override
@@ -16,6 +16,11 @@ public class AttackBreak extends Skill {
             System.out.println("释放失败，HP不足！");
             return;
         }
+        if (!owner.mpCost(this.cost)) {
+            System.out.println("释放失败，MP不足！");
+            return;
+        }
+
 
         if(target.inDefense == true){
             System.out.println(target.firstName + target.lastName + " 的防御姿态被打破了！");
